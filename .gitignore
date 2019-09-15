@@ -2,4 +2,8 @@
 .idea
 out
 gradle
+build
 lib
+
+src/main.resources/db.properties
+src/main.resources/hibernate.properties
