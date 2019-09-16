@@ -1,18 +1,41 @@
 package com.bass2000.server.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.bass2000.server.entity.Remind;
+import com.bass2000.server.service.ReminderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/reminder")
+import java.util.List;
+
+@RestController
+@RequestMapping("/reminders")
 public class ReminderController {
 
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @Autowired
+    private ReminderService reminderService;
+
+
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public String getReminder(ModelMap model) {
-        return "My reminder";
+    public List<Remind> getAllReminders() {
+        return reminderService.getAll();
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Remind getReminder(@PathVariable("id") long remindID) {
+        return reminderService.getById(remindID);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public Remind saveReminder(@RequestBody Remind remind) {
+        return reminderService.save(remind);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public void deleteReminderById(@PathVariable("id") long remindID) {
+        reminderService.remove(remindID);
     }
 }
