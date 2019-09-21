@@ -14,7 +14,7 @@ deploy:
     secure: $HEROKU_API_KEY
 
 jdk:
-  - oraclejdk11
+  - oraclejdk8
 
 os:
   - linux
@@ -34,7 +34,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-  - gradle clean build
+  - ./gradlew clean build
 
 
 notifications:
