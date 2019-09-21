@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.org/bass-2000/remind-server.svg?branch=master)](https://travis-ci.org/bass-2000/remind-server)
 
-[![Heroku deploy](https://heroku-badge.herokuapp.com/?app=remind-server)](https://remind-server.herokuapp.com)
+[![Heroku deploy](http://heroku-badge.herokuapp.com/?app=remind-server&root=reminders)](https://remind-server.herokuapp.com/reminders)
