@@ -14,7 +14,7 @@ deploy:
     secure: $HEROKU_API_KEY
 
 jdk:
-  - oraclejdk9
+  - oraclejdk11
 
 os:
   - linux
