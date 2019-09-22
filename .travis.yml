@@ -34,7 +34,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-  - gradle clean build
+  - ./gradlew clean build
 
 
 notifications:
